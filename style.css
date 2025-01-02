@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffcccc, #ffe6e6);
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  margin: 0 auto 20px;
+  transform: rotate(-45deg);
+  animation: heartbeat 1s infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -50px;
+  left: 0;
+}
+
+.heart:after {
+  left: 50px;
+  top: 0;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-45deg);
+  }
+}
+
+#question {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#yes-btn {
+  background: #4caf50;
+  color: white;
+}
+
+#no-btn {
+  background: #f44336;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#message {
+  font-size: 1.5em;
+  margin-top: 20px;
+  color: #333;
+}
+
+#love-score {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2em;
+  color: #333;
+}
